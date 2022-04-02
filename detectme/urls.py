@@ -7,8 +7,6 @@ urlpatterns = [
     path('home', views.home, name="home"),
     path('cv2_page', views.cv2_page, name="cv2-page"),
     path('auto_record', views.auto_record, name="auto_record"),
-    path('detectme', views.detectme, name="detectme"),
-    path('video_feed', views.video_feed, name='video_feed'),
     path('webcam_feed', views.webcam_feed, name='webcam_feed'),
     path('', views.show_all_page, name='list_questions'),
     

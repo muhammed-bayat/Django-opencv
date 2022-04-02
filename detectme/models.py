@@ -3,7 +3,6 @@ from django.db import models
 from django.db.models.query_utils import select_related_descend
 from django.shortcuts import redirect
 
-from detectme.camera import VideoCamera_py
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
@@ -20,8 +19,8 @@ class UserEntry(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     rating = models.CharField(max_length = 15, choices = Rating)
 
-    video_time = models.IntegerField(default=00,verbose_name="Video Süresi Dakika: ", validators=[MinValueValidator(1), MaxValueValidator(60)])
-    video_sec=models.IntegerField(default=00,verbose_name="Video Süresi Saniye: ", validators=[MinValueValidator(1), MaxValueValidator(60)])
+    video_time = models.IntegerField(default=00,verbose_name="Video Süresi Dakika: ", validators=[MinValueValidator(0), MaxValueValidator(60)])
+    video_sec=models.IntegerField(default=00,verbose_name="Video Süresi Saniye: ", validators=[MinValueValidator(0), MaxValueValidator(60)])
 
     cevap_a= models.CharField(max_length=150,verbose_name="Şık A",default="Lorem İpsum A")
     cevap_b= models.CharField(max_length=150,verbose_name="Şık B",default="Lorem İpsum B")
